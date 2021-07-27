@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { catchError } from 'rxjs/operators';
 import { User } from "../models/user.model";
+import { throwError } from 'rxjs';
 
 //URL for api
 const API_URL = environment.userApiUrl;
@@ -34,10 +35,10 @@ export class UserApiService {
   }
   deleteUser(userId: number): Observable<any> {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this.http.delete(API_URL + '/user/delete/' + userId, { headers }).pipe(catchError(this.handleError));
+    return this.http.post(API_URL + '/user/delete/' + userId, { headers }).pipe(catchError(this.handleError));
   }
 
   private handleError(error: Response | any) {
-    return Observable.throw(error);
+    return throwError(error);
   }
 }

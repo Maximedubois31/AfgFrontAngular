@@ -25,7 +25,12 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(userId: number) {
-    this.userApi.deleteUser(userId).subscribe();
+    console.log(userId);
+    this.userApi.deleteUser(userId).subscribe( () => console.log("delete"));
+  }
+
+  detailsUser(userId: number) {
+    
   }
 
 }
