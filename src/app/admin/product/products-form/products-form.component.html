@@ -1,0 +1,61 @@
+<h1>products-form works!</h1>
+
+<form *ngIf="product" (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nom produit</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name" #name="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="ref" class="form-label">Reference</label>
+        <input type="text" class="form-control" id="ref" [(ngModel)]="product.ref" name="ref" #ref="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" [(ngModel)]="product.brand" name="brand" #brand="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" class="form-control" id="image" [(ngModel)]="product.imageUrl" name="imageUrl" #imageUrl="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="origin" class="form-label">Origine</label>
+        <input type="text" class="form-control" id="origin" [(ngModel)]="product.origin" name="origin" #origin="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="quantityUnity" class="form-label">Unité de mesure</label>
+        <input type="text" class="form-control" id="quantityUnity" [(ngModel)]="product.quantityUnity" name="quantityUnity" #quantityUnity="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="product.description" name="description" #description="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="moq" class="form-label">moq</label>
+        <input type="number" class="form-control" id="moq" [(ngModel)]="product.moq" name="moq" #moq="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="active" class="form-label">active</label>
+        <input type="checkbox" class="form-check-input" id="active" [(ngModel)]="product.productIsActive" name="productIsActive" #productIsActive="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="lowPrice" class="form-label">lowPrice</label>
+        <input type="number" class="form-control" id="lowPrice" [(ngModel)]="product.lowPrice" name="lowPrice" #lowPrice="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="highPrice" class="form-label">highPrice</label>
+        <input type="number" class="form-control" id="highPrice" [(ngModel)]="product.highPrice" name="highPrice" #highPrice="ngModel">
+    </div>
+    <div class="mb-3">
+        <label for="productType" class="form-label">product type</label>
+        <select id="productType" class="form-select" [(ngModel)]="product.productType" name="productType" #productType="ngModel">
+          <option>Disabled select</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="supplier" class="form-label">Entreprise</label>
+        <select id="supplier" class="form-select" [(ngModel)]="product.supplier" name="supplier" #supplier="ngModel">
+          <option>Disabled select</option>
+        </select>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
