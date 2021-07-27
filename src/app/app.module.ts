@@ -8,6 +8,9 @@ import { ListProductComponent } from './admin/product/list-product/list-product.
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsFormComponent } from './admin/product/products-form/products-form.component';
 import { FormsModule } from '@angular/forms';
+import { UserApiService } from './admin/api/user-api.service';
+import { UsersComponent } from './admin/users/users.component';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ListProductComponent,
     ProductsFormComponent
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
