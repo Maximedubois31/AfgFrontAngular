@@ -7,6 +7,7 @@ import { UsersComponent } from './admin/users/users.component';
 const routes: Routes = [
   { path: 'products', component: ListProductComponent},
   { path: 'product/edit/:id', component: ProductsFormComponent},
+  { path: 'product/edit', component: ProductsFormComponent},
   {path: 'users', component: UsersComponent}
 ];
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product.model';
 
@@ -49,6 +49,6 @@ export class ProductApiService {
 
     private handleError(error: Response | any) {
       console.log("error");
-        return Observable.throw(error);
-      }
+      return throwError(error);
+    }
 }

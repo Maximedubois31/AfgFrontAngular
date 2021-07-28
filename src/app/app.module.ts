@@ -10,6 +10,7 @@ import { ProductsFormComponent } from './admin/product/products-form/products-fo
 import { FormsModule } from '@angular/forms';
 import { UserApiService } from './admin/api/user-api.service';
 import { UsersComponent } from './admin/users/users.component';
+import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { UsersComponent } from './admin/users/users.component';
     AppComponent,
     HeaderComponent,
     ListProductComponent,
-    ProductsFormComponent
-    UsersComponent
+    ProductsFormComponent,
+    UsersComponent,
+    ListProductTypeComponent
   ],
   imports: [
     BrowserModule,

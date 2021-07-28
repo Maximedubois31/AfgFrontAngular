@@ -1,5 +1,13 @@
 <h1>list-product works!</h1>
 
+<div class="py-5">
+  <a class="btn btn-sm btn-secondary" (click)="goNew()"> + Ajouter</a>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="active" [checked]="showActive" (click)="showActiveSwitch()">
+  <label class="form-check-label" for="flexSwitchCheckChecked">Changer vue produits (Active / Désactive)</label>
+</div>
+
 <table class="table table-responsive table-hover table-bordered p-5 align-middle">
     <thead class="table-dark">
         <tr class="text-center">
@@ -17,20 +25,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{ product.name}}</td>
-        <td>{{ product.ref}}</td>
-        <td>{{ product.brand}}</td>
-        <td>{{ product.origin}}</td>
-        <td class="w-25">{{ product.description}}</td>
-        <td>{{ product.productType}}</td>
-        <td>{{ product.lowPrice}} €</td>
-        <td>{{ product.highPrice}} €</td>
-        <td class="text-center">
-            <input class="form-check-input" type="checkbox" name="active" [checked]="product.productIsActive" (click)="active(product)" disabled>
+        <td *ngIf="showActive == product.productIsActive">{{ product.name}}</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.ref}}</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.brand}}</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.origin}}</td>
+        <td *ngIf="showActive == product.productIsActive" class="w-25">{{ product.description}}</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.productType}}</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.lowPrice}} €</td>
+        <td *ngIf="showActive == product.productIsActive">{{ product.highPrice}} €</td>
+        <td *ngIf="showActive == product.productIsActive" class="text-center">
+            <input class="form-check-input" type="checkbox" name="active" [checked]="product.productIsActive" (click)="active(product)">
         </td>
-        <td>
+        <td *ngIf="showActive == product.productIsActive">
             <a class="btn btn-sm btn-warning" (click)="goEdit(product)">Modifier</a>
-            <a class="btn btn-sm btn-danger" (click)="deleteProduct(product)">Supprimer</a>
+            <a class="btn btn-sm btn-danger" (click)="active(product)">Supprimer</a>
         </td>
       </tr>
     </tbody>
