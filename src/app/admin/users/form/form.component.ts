@@ -30,7 +30,14 @@ export class FormComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]],
+      active: [],
+      roles: [],
+      company: []
     });
+  }
+
+  active(user: User) {
+    user.active = !user.active;
   }
 
   // convenience getter for easy access to form fields

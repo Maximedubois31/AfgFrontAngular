@@ -11,7 +11,8 @@
                         formControlName="firstName" 
                         class="form-control" 
                         [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" 
-                        [(ngModel)]="user.firstName" name="firstName"
+                        [(ngModel)]="user.firstName" 
+                        name="firstName"
                         />
                     <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                         <div *ngIf="f.firstName.errors.required">First Name is required</div>
@@ -25,7 +26,8 @@
                             formControlName="lastName" 
                             class="form-control" 
                             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" 
-                            [(ngModel)]="user.lastName" name="lastName"/>
+                            [(ngModel)]="user.lastName" 
+                            name="lastName"/>
                     <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                         <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                     </div>
@@ -39,12 +41,14 @@
                     formControlName="email" 
                     class="form-control" 
                     [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
-                    [(ngModel)]="user.email" name="email"/>
+                    [(ngModel)]="user.email" 
+                    name="email"/>
                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                     <div *ngIf="f.email.errors.required">Email is required</div>
                     <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                 </div>
             </div>
+            
             <!-- User password -->
             <div class="form-row">
                 <div class="form-group col">
@@ -70,7 +74,43 @@
                         <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
                     </div>
                 </div> -->
-            </div>            
+            </div>     
+
+             <!-- User Active -->
+            <div class="form-group">
+                <label>Active </label>
+                <input type="checkbox"
+                formControlName="active"
+                class="form-check-input" 
+                [(ngModel)]="user.active"        
+                name="active" 
+                [checked]="user.active"
+                (click)="active(user)">
+            </div>     
+
+             <!-- User Role -->  
+            <div class="form-group">
+                <label>Role</label>
+                <select formControlName="roles"
+                class="form-select" 
+                [(ngModel)]="user.roles"        
+                name="roles">
+                <option>ROLE_CUSTOMER</option>
+                <option>ROLE_LOGISTIC</option>
+                <option>ROLE_PREPARATOR</option>
+                </select>
+            </div>  
+
+            <!-- User Company -->
+            <!-- <div class="form-group">
+                <label>Entreprise</label>
+                <select formControlName="roles"
+                class="form-select" 
+                [(ngModel)]="user.company"        
+                name="roles">
+                <option *ngFor="let company of company" [ngValue]="company.id">{{company.companyName}}</option>
+                </select>
+            </div>   -->
             <div class="text-center">
                 <button class="btn btn-primary mr-1" type="submit">Enregistrer</button>
                 <button class="btn btn-secondary" type="reset" (click)="goBack()">Annuler</button>
