@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { UserApiService } from './admin/api/user-api.service';
 import { UsersComponent } from './admin/users/users.component';
 import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
+import { ListCompanyComponent } from './admin/company/list-company/list-company.component';
+import { CompaniesFormComponent } from './admin/company/companies-form/companies-form.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ListProductTypeComponent } from './admin/list-product-type/list-product
     ListProductComponent,
     ProductsFormComponent,
     UsersComponent,
-    ListProductTypeComponent
+    ListProductTypeComponent,
+    ListCompanyComponent,
+    CompaniesFormComponent
   ],
   imports: [
     BrowserModule,
