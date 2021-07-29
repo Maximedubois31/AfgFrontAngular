@@ -1,0 +1,26 @@
+<section>
+    <button class="btn btn-primary" (click)='createUser()'>Créer un utilisateur</button>
+    <table class="table table-responsive table-hover table-bordered p-5 align-middle">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>   
+                <th scope="col">Company Name</th> 
+                <th scope="col">Actions</th>             
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.company}}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" (click)='updateUser(user.id)'>Update</button>
+                    <button class="btn btn-sm btn-danger" (click)='deleteUser(user.id)'>Delete</button> 
+                </td>           
+            </tr>
+        </tbody>
+    </table>
+</section>
