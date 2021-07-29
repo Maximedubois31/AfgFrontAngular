@@ -9,8 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsFormComponent } from './admin/product/products-form/products-form.component';
 import { FormsModule } from '@angular/forms';
 import { UserApiService } from './admin/api/user-api.service';
-import { UsersComponent } from './admin/users/users.component';
+import { FormComponent } from './admin/users/form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './admin/users/list-user/users.component';
+import { EditUserComponent } from './admin/users/edit/edit-user.component';
 import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
+import { ListCompanyComponent } from './admin/company/list-company/list-company.component';
+import { CompaniesFormComponent } from './admin/company/companies-form/companies-form.component';
 
 
 @NgModule({
@@ -20,12 +25,18 @@ import { ListProductTypeComponent } from './admin/list-product-type/list-product
     ListProductComponent,
     ProductsFormComponent,
     UsersComponent,
+    ListProductTypeComponent,
+    ListCompanyComponent,
+    CompaniesFormComponent,
+    FormComponent,
+    EditUserComponent,
     ListProductTypeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [UserApiService],
