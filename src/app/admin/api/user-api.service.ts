@@ -24,14 +24,15 @@ export class UserApiService {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
     return this.http.get<User>(API_URL + '/user/details/' + userId, { headers }).pipe(catchError(this.handleError));
   }
-  createUser(user: User): Observable<User> {
+  // createUser(user: User): Observable<User> {
+  //   let body = JSON.stringify(user);
+  //   const headers = new HttpHeaders().set("Content-Type", "application/json");
+  //   return this.http.post<User>(API_URL + '/user/new', body, { headers }).pipe(catchError(this.handleError));
+  // }
+  updateUser(user: User): Observable<User> {
     let body = JSON.stringify(user);
     const headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this.http.post<User>(API_URL + '/user/new', body, { headers }).pipe(catchError(this.handleError));
-  }
-  updateUser(user: User): Observable<User> {
-    const headers = new HttpHeaders().set("Content-Type", "application/json");
-    return this.http.put<User>(API_URL + '/user/edit', { headers }).pipe(catchError(this.handleError));
+    return this.http.post<User>(API_URL + '/user/edit', body, { headers }).pipe(catchError(this.handleError));
   }
   deleteUser(userId: number): Observable<any> {
     const headers = new HttpHeaders().set("Content-Type", "application/json");

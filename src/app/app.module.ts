@@ -9,10 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsFormComponent } from './admin/product/products-form/products-form.component';
 import { FormsModule } from '@angular/forms';
 import { UserApiService } from './admin/api/user-api.service';
-import { UsersComponent } from './admin/users/users.component';
 import { FormComponent } from './admin/users/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsersComponent } from './admin/users/list-user/users.component';
+import { EditUserComponent } from './admin/users/edit/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +21,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ListProductComponent,
     ProductsFormComponent,
     UsersComponent,
-    FormComponent 
+    FormComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule,
     FormsModule
   ],
   providers: [UserApiService],

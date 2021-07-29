@@ -1,6 +1,8 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { UserApiService } from '../api/user-api.service';
-import { User } from '../models/user.model';
+import { Router } from '@angular/router';
+import { UserApiService } from '../../api/user-api.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +11,7 @@ import { User } from '../models/user.model';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private userApi:UserApiService) { }
+  constructor(private router: Router, private userApi:UserApiService) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -29,8 +31,14 @@ export class UsersComponent implements OnInit {
     this.userApi.deleteUser(userId).subscribe( () => console.log("delete"));
   }
 
-  detailsUser(userId: number) {
-    
+  updateUser(userId: number) {
+    let link = ['/user/edit/', userId]
+    this.router.navigate(link);
+  }
+
+  createUser() {
+    let link = ['/user/edit']
+    this.router.navigate(link);
   }
 
 }
