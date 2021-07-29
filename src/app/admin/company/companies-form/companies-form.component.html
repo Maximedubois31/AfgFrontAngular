@@ -1,0 +1,37 @@
+<h1>companies-form works!</h1>
+
+<form *ngIf="company" (ngSubmit)="onSubmit()" #companyForm="ngForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Company Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="company.companyName" name="name" #name="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="invoiceAddress" class="form-label">Invoice Address</label>
+    <input type="text" class="form-control" id="invoiceAddress" [(ngModel)]="company.invoiceAddress" name="invoiceAddress" #invoiceAddress="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="deliveryAddress" class="form-label">Delivery Address</label>
+    <input type="text" class="form-control" id="deliveryAddress" [(ngModel)]="company.deliveryAddress" name="deliveryAddress" #deliveryAddress="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="siret" class="form-label">Siret Number</label>
+    <input type="text" class="form-control" id="siret" [(ngModel)]="company.siret" name="siret" #siret="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">e Mail</label>
+    <input type="text" class="form-control" id="email" [(ngModel)]="company.email" name="email" #email="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phone" [(ngModel)]="company.phone" name="phone" #phone="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="vatNumber" class="form-label">Vat Number</label>
+    <input type="text" class="form-control" id="vatNumber" [(ngModel)]="company.vatNumber" name="vatNumber" #vatNumber="ngModel">
+  </div>
+  <div class="mb-3">
+    <label for="nafApeCode" class="form-label">Ape Number</label>
+    <input type="text" class="form-control" id="nafApeCode" [(ngModel)]="company.nafApeCode" name="nafApeCode" #nafApeCode="ngModel">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

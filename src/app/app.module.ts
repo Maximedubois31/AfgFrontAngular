@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './admin/users/list-user/users.component';
 import { EditUserComponent } from './admin/users/edit/edit-user.component';
 import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
+import { ListCompanyComponent } from './admin/company/list-company/list-company.component';
+import { CompaniesFormComponent } from './admin/company/companies-form/companies-form.component';
 
 
 @NgModule({
@@ -23,6 +25,9 @@ import { ListProductTypeComponent } from './admin/list-product-type/list-product
     ListProductComponent,
     ProductsFormComponent,
     UsersComponent,
+    ListProductTypeComponent,
+    ListCompanyComponent,
+    CompaniesFormComponent,
     FormComponent,
     EditUserComponent,
     ListProductTypeComponent
