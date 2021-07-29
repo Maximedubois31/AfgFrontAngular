@@ -12,6 +12,8 @@ import { Product} from '../../models/product.model';
 export class ListProductComponent implements OnInit {
 
   products: Product[] = []
+  showActive: boolean = true;
+
   constructor(private productApiService: ProductApiService, private router: Router) { }
 
   ngOnInit(): void {
@@ -28,14 +30,23 @@ export class ListProductComponent implements OnInit {
   }
 
   active(product: Product) {
-    //product.productIsActive = !product.productIsActive;
+    product.productIsActive = !product.productIsActive;
     
-    this.productApiService.updateProduct(product).subscribe(_=> this.goBack())
+    this.productApiService.updateProduct(product).subscribe();
   }
 
   goEdit(product: Product) {
     let link = ['/product/edit', product.id];
     this.router.navigate(link);
+  }
+
+  goNew() {
+    let link = ['/product/edit'];
+    this.router.navigate(link);
+  }
+
+  showActiveSwitch(): void {
+    this.showActive = !this.showActive;
   }
 
   goBack(): void {

@@ -13,6 +13,8 @@ import { FormComponent } from './admin/users/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './admin/users/list-user/users.component';
 import { EditUserComponent } from './admin/users/edit/edit-user.component';
+import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { EditUserComponent } from './admin/users/edit/edit-user.component';
     ProductsFormComponent,
     UsersComponent,
     FormComponent,
-    EditUserComponent
+    EditUserComponent,
+    ListProductTypeComponent
   ],
   imports: [
     BrowserModule,

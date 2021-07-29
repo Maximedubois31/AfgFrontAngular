@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'product/edit/:id', component: ProductsFormComponent},
   { path: 'users', component: UsersComponent},
   { path: 'user/edit/:id', component: EditUserComponent},
-  { path: 'user/edit', component: EditUserComponent}
+  { path: 'user/edit', component: EditUserComponent},
+  { path: 'product/edit', component: ProductsFormComponent}
 ];
 
 @NgModule({
