@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CompanyApiService } from '../../api/companyApi.service';
 import { UserApiService } from '../../api/user-api.service';
+import { Company } from '../../models/company.model';
 import { User } from '../../models/user.model';
 
 // import custom validator to validate that password and confirm password fields match
@@ -15,13 +17,17 @@ import { MustMatch } from './helpers/must-match.validator';
 export class FormComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  companies: Company[] = [];
 
   @Input() user!:User;
 
-  constructor( private router: Router, private formBuilder: FormBuilder , private userApi:UserApiService, private activatedRouter:ActivatedRoute) { }
+  constructor( private router: Router, private formBuilder: FormBuilder ,
+     private userApi:UserApiService, private activatedRouter:ActivatedRoute, 
+     private companyApi:CompanyApiService) { }
 
   ngOnInit() {
     this.validForm();
+    this.getCompanies();
   }
 
   validForm() {
@@ -57,6 +63,11 @@ export class FormComponent implements OnInit {
   goBack() {
     this.submitted = false;
     this.router.navigate(['/users']);
+  }
+
+  getCompanies(): void{  
+    this.companyApi.getCompanies().subscribe(elements => this.companies = elements);
+    console.log(this.companies);
   }
 }
 

@@ -2,7 +2,7 @@ import { Address } from "./address.model";
 
 export class Company {
     constructor(
-        public id:number,
+        public id:string,
         public companyName: string,
         public invoiceAddress: Address,
         public deliveryAddress: Address,

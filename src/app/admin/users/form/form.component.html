@@ -48,7 +48,7 @@
                     <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                 </div>
             </div>
-            
+
             <!-- User password -->
             <div class="form-row">
                 <div class="form-group col">
@@ -102,15 +102,17 @@
             </div>  
 
             <!-- User Company -->
-            <!-- <div class="form-group">
+             <div class="form-group">
                 <label>Entreprise</label>
-                <select formControlName="roles"
+                <select formControlName="company"
                 class="form-select" 
-                [(ngModel)]="user.company"        
-                name="roles">
-                <option *ngFor="let company of company" [ngValue]="company.id">{{company.companyName}}</option>
+                [(ngModel)]="user.companyId"        
+                name="company"
+                ng-options="company.companyName for company in companies">
+                <option *ngFor="let company of companies" 
+                [ngValue]="company.id">{{company.companyName}}</option>
                 </select>
-            </div>   -->
+            </div>   
             <div class="text-center">
                 <button class="btn btn-primary mr-1" type="submit">Enregistrer</button>
                 <button class="btn btn-secondary" type="reset" (click)="goBack()">Annuler</button>

@@ -31,7 +31,7 @@ export class CompanyApiService {
         return this.http.get<Company>(API_URL + '/company/details/' + companyId, { headers }).pipe(catchError(this.handleError));
     }
 
-    deleteCompany(companyId: Number): Observable<any> {
+    deleteCompany(companyId: String): Observable<any> {
         const headers = new HttpHeaders().set("Content-Type", "application/json");
 
         return this.http.delete(API_URL + '/company/delete/' + companyId, { headers }).pipe(catchError(this.handleError));

@@ -9,6 +9,6 @@ export class User {
         public password: string,
         public active: boolean,
         public roles: string,
-        public company: string
+        public companyId: string
     ){}
 }
