@@ -16,6 +16,7 @@ import { EditUserComponent } from './admin/users/edit/edit-user.component';
 import { ListProductTypeComponent } from './admin/list-product-type/list-product-type.component';
 import { ListCompanyComponent } from './admin/company/list-company/list-company.component';
 import { CompaniesFormComponent } from './admin/company/companies-form/companies-form.component';
+import { HomeComponent } from './admin/home/home.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CompaniesFormComponent } from './admin/company/companies-form/companies
     CompaniesFormComponent,
     FormComponent,
     EditUserComponent,
-    ListProductTypeComponent
+    ListProductTypeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
